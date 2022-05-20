@@ -152,6 +152,8 @@ graphForDijkstraSearch.e = { f: 1 };
 graphForDijkstraSearch.f = { g: 1 };
 graphForDijkstraSearch.g = {};
 
+const MAX = Number.MAX_SAFE_INTEGER;
+
 const dijkstraSearch = (graph, start) => {
   const costs = {};
   const processed = [];
@@ -159,7 +161,7 @@ const dijkstraSearch = (graph, start) => {
   Object.keys(graph).forEach((node) => {
     if (node !== start) {
       let value = graph[start][node];
-      costs[node] = value || 1000000000;
+      costs[node] = value || MAX;
     }
   });
   let node = findNodeLowestCosts(costs, processed);
@@ -179,7 +181,7 @@ const dijkstraSearch = (graph, start) => {
 };
 
 const findNodeLowestCosts = (costs, processed) => {
-  let lowestCost = 1000000000;
+  let lowestCost = MAX;
   let lowestNode;
   Object.keys(costs).forEach((node) => {
     let cost = costs[node];
