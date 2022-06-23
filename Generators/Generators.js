@@ -1,4 +1,4 @@
-// Генератор високосных годов:
+// Leap years generator:
 
 let generateLeapYears = function () {
   let range = {
@@ -20,7 +20,7 @@ let generateLeapYears = function () {
 
 // generateLeapYears();
 
-// Генерация id:
+// id generator:
 
 let idGenerator = function* (max = 5) {
   let i = Math.floor(Math.random() * max);
@@ -34,7 +34,7 @@ const ids = idGenerator();
 // console.log(ids.next().value);
 // console.log(ids.next().value);
 
-// Генератор счетчиков с изменяемым интервалом:
+// Counter generator with variable intervals:
 
 let counter = function* () {
   let counter = 0;
